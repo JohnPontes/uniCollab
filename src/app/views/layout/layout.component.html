@@ -1,0 +1,14 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav>
+      <app-side-nav (closeSideNav)="sidenav.close()"></app-side-nav>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <app-toolbar *ngIf="loginDisplay" (SideNavToggle)="sidenav.toggle()"></app-toolbar>
+      <main style="height: 90%;" >
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>

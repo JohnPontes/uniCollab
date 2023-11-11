@@ -1,0 +1,70 @@
+@import '../../colors/colors.scss';
+@import '../../colors/mixins.scss';
+
+.search-token {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+
+    .form-token {
+        width: 25rem;
+    }
+}
+
+.title-table {
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+    color: $dark-gray;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.table-result {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding: 16px;
+
+    .items-length {
+        padding-bottom: 8px;
+        color: $dark-gray;
+    }
+
+    table {
+        color: $dark-gray;
+        display: block;
+        height: 600px;
+        overflow-y: auto;
+        text-align: center;
+
+        th,
+        td {
+            border: 1px solid $light-gray;
+            padding: 8px;
+        }
+
+        th {
+            background-color: $light-green;
+            color: $white;
+        }
+
+        .pdf-button {
+            height: 100%;
+
+            .mat-icon {
+                line-height: 0 !important;
+            }
+        }
+
+        .copy-icon {
+            color: $light-green;
+        }
+
+        .hash-column {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

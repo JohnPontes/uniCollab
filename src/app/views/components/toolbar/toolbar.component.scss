@@ -1,0 +1,55 @@
+@import './../../../colors/colors.scss';
+
+.custom-toolbar {
+    background-color: $dark-blue;
+    justify-content: space-between;
+    height: 10%;
+
+    .form-control {
+        width: 100px;
+        text-align: center ;
+        cursor: pointer;
+    }
+
+    .toolbar1 {
+        display: flex;
+        text-align: center;
+        justify-content: start;
+        width: 200px;
+    }
+
+    .toolbar2 {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 200px;
+        gap: 30px;
+
+        .div-language {
+            display: flex;
+            gap: 4px;
+            .icons-language {
+                
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+    .logo-unicollab-top {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        img {
+            width: 150px;
+            height: 40px;
+        }
+
+    }
+
+    .buttons-toolbar {
+        color: $white
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "icons": [
+        {
+            "icon": "pdf",
+            "path": "pdf-icon.svg"
+        },
+        {
+            "icon": "image",
+            "path": "png-icon.svg"
+        },
+        {
+            "icon": "copy",
+            "path": "copy-icon.svg"
+        },
+        {
+            "icon": "info",
+            "path": "info-icon.svg"
+        }
+    ]
+}

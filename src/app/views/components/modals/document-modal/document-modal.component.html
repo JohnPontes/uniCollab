@@ -1,0 +1,28 @@
+<div class="container-modal-files">
+    <ngx-extended-pdf-viewer *ngIf="data.type === 'pdf'" 
+        [src]="data.file" 
+        [showToolbar]="true" 
+        [zoom]="'100%'" 
+        [showRotateButton]="false" 
+        [showTextEditor]="false"
+        [showSidebarButton]="false"
+        [showSecondaryToolbarButton]="false"
+        [showRotateButton]="false"
+        [showPrintButton]="false"
+        [showDownloadButton]="false"
+        [showDrawEditor]="false"
+        [showOpenFileButton]="false"
+        [showPagingButtons]="false"
+        [theme]="'dark'">
+    </ngx-extended-pdf-viewer>
+
+        <div class="image-div" *ngIf="data.type !== 'pdf'" id="div-image">
+            <div class="buttons-div">
+                <mat-icon class="button-img" (click)="addSize()">add</mat-icon>
+                <mat-icon class="button-img" (click)="removeSize()">remove</mat-icon>
+                <span class="percent-image">{{porcentImage + '%'}}</span>
+            </div>
+            <img style="width: 100%; height: 100%;" [src]="data.file" alt="" id="image" onContextMenu="return false;">
+        </div>
+
+</div>

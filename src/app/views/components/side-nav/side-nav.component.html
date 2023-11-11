@@ -1,0 +1,25 @@
+<mat-nav-list class="sidenav-list">
+  <div>
+    <div class="logo-unicollab-img">
+      <img src="../../../../assets/icons/logo-side.png" alt="logo-unicollab">
+    </div>
+    <div class="user-email">
+      <span class="title">Usuário: <span class="desc-user">{{userName}}</span></span>
+      <span class="title">Email: <span class="desc-user">{{userEmail}}</span></span>
+    </div>
+    <mat-divider></mat-divider>
+  
+    <ng-container *ngFor="let link of menu">
+      <mat-toolbar-row [routerLink]="link.route" [routerLinkActive]="'list-item-active'" (click)="onToggleClose()">
+        <span class="title-side"> {{ link.title }}</span>
+      </mat-toolbar-row>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </div>
+
+
+  <div class="exit-app" (click)="logout()">
+    <span class="text-exit">Sair</span>
+  </div>
+
+</mat-nav-list>

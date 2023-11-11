@@ -1,0 +1,51 @@
+@import '../../../../colors/colors.scss';
+@import '../../../../colors/mixins.scss';
+
+.container-modal {
+    @include text-font-global;
+    width: 100%;
+    height: 100%;
+
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .title-modal {
+            display: flex;
+            align-items: center;
+            color: $dark-gray;
+            font-weight: 600;
+
+            .icon-type {
+                margin-right: 8px;
+            }
+        }
+
+        .close-modal {
+            color: $light-gray;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: $dark-gray;
+            cursor: pointer;
+        }
+    }
+
+    .divider-modal {
+        margin: 8px 0px;
+    }
+
+    .body {
+        text-align: center;
+        color: $dark-gray;
+    }
+
+    .buttons-modal {
+        display: flex;
+        justify-content: end;
+        gap: 8px;
+    }
+
+}

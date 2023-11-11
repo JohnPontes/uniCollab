@@ -1,0 +1,77 @@
+@import './../../../colors/colors.scss';
+@import './../../../colors/mixins.scss';
+
+.sidenav-list {
+    @include text-font-global;
+    font-weight: 500;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 95% 5%;
+    .logo-unicollab-img {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 16px 0 16px 0;
+    
+        img {
+            width: 200px;
+            height: 70px;
+        }
+    }
+
+    .user-email {
+        padding: 0 8px 8px 8px;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            color: $dark-gray;
+        }
+
+        .desc-user {
+            color: #137bff;
+        }
+    }
+    
+    .mat-toolbar-row:hover {
+        background-color: $dark-blue;
+        cursor: pointer;
+        span {
+            color: $white
+        }
+    }
+    
+    .title-side {
+        color: $black;
+    }
+    
+    
+    
+    .list-item-active {
+        span {
+            color: $dark-blue;
+            
+        }
+    }
+
+    .exit-app {
+        background-color: $red-error;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+       .text-exit {
+        color: $white;
+        font-size: 16px;
+        font-weight: 600;
+       }
+    }
+
+    .exit-app:hover {
+        background-color: rgb(61, 0, 0);
+
+       .text-exit {
+        color: $white;
+       }
+    }
+}

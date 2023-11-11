@@ -1,0 +1,29 @@
+<div class="container-modal">
+    <div class="header">
+        <div class="title-modal">
+            <mat-icon class="icon-type" [ngStyle]="{'color': data.type === 'error' ? '#c20000' : '#1e60a8'}">error</mat-icon>
+            {{data.title}}
+        </div>
+
+        <div class="close-modal" (click)="handleClick()" *ngIf="!data.disableClose">
+            <mat-icon>close</mat-icon>
+        </div>
+
+    </div>
+
+    <mat-divider class="divider-modal"></mat-divider>
+
+    <div class="body">
+        {{data.message}}
+    </div>
+
+
+    <ng-container *ngIf="data.button1 || data.button2">
+        <mat-divider class="divider-modal"></mat-divider>
+    
+        <div class="buttons-modal">
+            <button *ngIf="data.button2" mat-raised-button color="warn" (click)="handleClick(false)">{{ data.button2 }}</button>
+            <button *ngIf="data.button1" mat-raised-button color="primary" (click)="handleClick(true)" >{{ data.button1 }}</button>
+        </div>
+    </ng-container>
+</div>

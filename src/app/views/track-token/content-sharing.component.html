@@ -1,0 +1,50 @@
+<div class="container-screen">
+    <div class="title-screen">
+        <h1 >Compartilhamento de conteúdos acadêmicos</h1>
+    </div>
+    <div class="search-token">
+        <mat-form-field color="primary" appearance="standard" floatLabel="always" [hideRequiredMarker]="true"
+            class="form-token">
+            <mat-label>asdasdsadas</mat-label>
+            <input type="text" matInput [formControl]="token" placeholder="placeholder"
+                (keyup.enter)="getTokenResult()" >
+            <button mat-icon-button matSuffix color="primary" [disabled]="!token.valid" aria-label="button"
+                (click)="getTokenResult()">
+                <mat-icon>search</mat-icon>
+            </button>
+            <mat-error *ngIf="token.errors?.['required']">error</mat-error>
+        </mat-form-field> 
+    </div>
+
+    <div class="title-table" *ngIf="data.length > 0">
+       titulo tabela
+    </div>
+    <div class="table-result" *ngIf="data.length > 0">
+        <mat-divider *ngIf="showLines.top"></mat-divider>
+        <table (scroll)="onScrollEvent($event)">
+            <tr>
+                <th *ngFor="let column of columns">{{column}}</th>
+            </tr>
+            <tr *ngFor="let item of data; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.startDate | date: 'dd/MM/yyyy':"+0000"}}</td>
+                <td>{{item.modificationDate | date: 'dd/MM/yyyy':"+0000"}}</td>
+                <td>
+                    <button mat-icon-button aria-label="button" class="pdf-button" (click)="openModalDocument(item.link)">
+                        <mat-icon [matTooltip]="'tooltip'" [matTooltipPosition]="'left'" [svgIcon]="iconTable(item.link)"></mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <mat-divider *ngIf="showLines.bottom"></mat-divider>
+    </div>
+
+</div>
+
+
+
+<ngx-spinner size="large" color="#8dba38" [showSpinner]="loading" type="ball-clip-rotate-multiple" [fullScreen]="true">
+    <p style="font-size: 20px; color: white">Loading..</p>
+</ngx-spinner>

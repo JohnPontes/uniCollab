@@ -1,0 +1,22 @@
+<mat-toolbar class="custom-toolbar">
+    <div class="toolbar1">
+        <button mat-icon-button class="buttons-toolbar" (click)="openSidenav()">
+            <mat-icon fontIcon="menu"></mat-icon>
+        </button>
+    </div>
+
+    <div class="logo-unicollab-top" *ngIf="width > 500">
+        <img src="../../../../assets/icons/logo-top.png" alt="logo-unicollab" (click)="navigateToHome()"
+        >
+    </div>
+
+
+    <div class="toolbar2" >
+        <div placement="left" ngbTooltip="Sair">
+            <button mat-icon-button class="buttons-toolbar" (click)="logout()" >
+                <mat-icon fontIcon="exit_to_app"></mat-icon>
+            </button>
+        </div>
+    </div>
+
+</mat-toolbar>
