@@ -34,7 +34,6 @@ export class LayoutComponent implements OnInit {
       .subscribe((result: EventMessage) => {
         const payload = result.payload as AuthenticationResult;
         this.authService.instance.setActiveAccount(payload.account);
-        console.log('teste')
       });
 
     this.msalBroadcastService.inProgress$

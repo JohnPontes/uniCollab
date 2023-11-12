@@ -1,14 +1,14 @@
 export const environment = {
   production: true,
-  redirectUrl:'https://bluebellplatform.azurewebsites.net',
+  redirectUrl:'http://localhost:4200',
   msalConfig: {
       auth: {
           clientId: 'f41870ef-c846-44b6-9bd0-ba579c6cca57',
       }
   },
   apiConfig: {
-      scopes: ["https://bbindex.onmicrosoft.com/f41870ef-c846-44b6-9bd0-ba579c6cca57/QueryToken"],
-      uri: 'https://bluebellplatform-bff.azurewebsites.net'
+      scopes: [],
+      uri: ''
   },
   b2cPolicies: {
     names: {

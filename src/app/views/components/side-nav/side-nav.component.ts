@@ -21,7 +21,6 @@ export class SideNavComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       const account = this.authService?.instance?.getAllAccounts()
-      console.log(account)
       this.userEmail = account[0]?.idTokenClaims?.['emails']?.[0]
       this.userName = account[0]?.idTokenClaims?.['given_name']
       this.cd.detectChanges();

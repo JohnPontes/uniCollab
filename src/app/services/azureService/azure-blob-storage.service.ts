@@ -54,7 +54,7 @@ export class AzureBlobStorageService {
   }
 
   private containerClient(sas?: string): ContainerClient {
-    let token = "sp=racwdl&st=2023-11-11T20:21:10Z&se=2023-11-12T04:21:10Z&spr=https&sv=2022-11-02&sr=c&sig=45%2F4tyB5bhfXNV9z5dZROZ2ACPIdInU38GjAVkJC0Tc%3D"
+    let token = "sp=racwdl&st=2023-11-12T02:15:59Z&se=2023-12-20T10:15:59Z&spr=https&sv=2022-11-02&sr=c&sig=iRYUCEh7%2B%2FSXE6THofxmcuTG8LTCVYfccAs35HYNMTA%3D"
     if (sas) {
       token = sas
     }
