@@ -1,15 +1,41 @@
 @import '../../colors/colors.scss';
 @import '../../colors/mixins.scss';
 
-.search-token {
+.search-file {
     display: flex;
     justify-content: center;
     padding: 16px;
 
-    .form-token {
+    .form-file {
         width: 25rem;
     }
 }
+
+.align-input-file {
+    display: flex;
+    justify-content: end;
+    padding-right: 32px;
+
+    .input-file-custom {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 16px;
+        height: 40px;
+
+        .label-custon {
+            border: 1px solid $light-gray;
+            border-radius: 8px;
+            background-color: $medium-blue;
+            color: white;
+            display: flex; 
+            align-items: center; 
+            cursor: pointer;
+            padding: 8px;
+        }
+    }
+}
+
 
 .title-table {
     display: flex;
@@ -45,7 +71,7 @@
         }
 
         th {
-            background-color: $light-green;
+            background-color: $medium-blue;
             color: $white;
         }
 

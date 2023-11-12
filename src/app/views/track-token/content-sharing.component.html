@@ -1,45 +1,59 @@
 <div class="container-screen">
     <div class="title-screen">
-        <h1 >Compartilhamento de conteúdos acadêmicos</h1>
+        <h1>Compartilhamento de conteúdos acadêmicos</h1>
     </div>
-    <div class="search-token">
+    <div class="search-file">
         <mat-form-field color="primary" appearance="standard" floatLabel="always" [hideRequiredMarker]="true"
-            class="form-token">
-            <mat-label>asdasdsadas</mat-label>
-            <input type="text" matInput [formControl]="token" placeholder="placeholder"
-                (keyup.enter)="getTokenResult()" >
-            <button mat-icon-button matSuffix color="primary" [disabled]="!token.valid" aria-label="button"
-                (click)="getTokenResult()">
+            class="form-file">
+            <mat-label>Pesquisar</mat-label>
+            <input type="text" matInput [formControl]="formFilter" placeholder="Pesquise pelo nome do arquivo"
+                (keyup.enter)="reloadDocuments(formFilter.value)" [disabled]="!formFilter.valid">
+            <button mat-icon-button matSuffix color="primary" aria-label="button"
+                (click)="reloadDocuments(formFilter.value)">
                 <mat-icon>search</mat-icon>
             </button>
-            <mat-error *ngIf="token.errors?.['required']">error</mat-error>
-        </mat-form-field> 
+        </mat-form-field>
     </div>
 
-    <div class="title-table" *ngIf="data.length > 0">
-       titulo tabela
+
+    <div class="title-table" *ngIf="documentsList.length > 0">
+        Documentos Compartilhados
     </div>
-    <div class="table-result" *ngIf="data.length > 0">
+
+    <div class="align-input-file">
+        <div class="mb-3" class="input-file-custom">
+            <label for="formFileSm" class="label-custon">Adicionar arquivo <mat-icon>download</mat-icon></label>
+            <input class="form-control form-control-sm" id="formFileSm" type="file" placeholder="teste" accept=".pdf" style="display: none;" (change)="uploadFile($event.target)">
+        </div>
+    </div>
+
+    <div class="table-result" *ngIf="documentsList.length > 0">
         <mat-divider *ngIf="showLines.top"></mat-divider>
         <table (scroll)="onScrollEvent($event)">
             <tr>
                 <th *ngFor="let column of columns">{{column}}</th>
             </tr>
-            <tr *ngFor="let item of data; let i = index">
-                <td>{{i + 1}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.startDate | date: 'dd/MM/yyyy':"+0000"}}</td>
-                <td>{{item.modificationDate | date: 'dd/MM/yyyy':"+0000"}}</td>
+            <tr *ngFor="let item of documentsList">
+                <td>{{item?.name}}</td>
+                <td>{{item?.date | date: "dd/MM/yyyy 'ás' HH:mm"}}</td>
                 <td>
-                    <button mat-icon-button aria-label="button" class="pdf-button" (click)="openModalDocument(item.link)">
-                        <mat-icon [matTooltip]="'tooltip'" [matTooltipPosition]="'left'" [svgIcon]="iconTable(item.link)"></mat-icon>
+                    <button mat-icon-button aria-label="button" class="pdf-button"
+                        (click)="downloadDocuments(item?.name)">
+                        <mat-icon [matTooltip]="'Clique para visualizar'" [matTooltipPosition]="'left'"
+                            svgIcon="pdf"></mat-icon>
                     </button>
                 </td>
             </tr>
         </table>
         <mat-divider *ngIf="showLines.bottom"></mat-divider>
     </div>
+
+    <!-- <div>
+        <label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Seleccionar imagenes</label>
+        <input type="file" id="imageUpload" (change)="uploadFile($event.target)">
+    </div> -->
+
+
 
 </div>
 
